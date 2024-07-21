@@ -4,9 +4,9 @@
 # Họ và tên: Trần Ngọc Nhật Minh
 # Bài làm:
 
-a = int(input())
-b = int(input())
-sign = input()
+a = int(input("Nhập số a: "))
+b = int(input("Nhập số b: "))
+sign = input("Dấu: ")
 if sign=="+":
   print(a+b)
 else:
