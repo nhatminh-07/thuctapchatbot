@@ -15,13 +15,16 @@ def click(num):
     e.insert(0, str(num))
 
 # các nút bấm
-# lambda function: javascript
-bt_1 = Button(text = "1", width = 10, height = 3, command = lambda: click(1))
-bt_1.grid(row = 1, column = 0)
-bt_2 = Button(text = "2", width = 10, height = 3, command = lambda: click(2))
-bt_2.grid(row = 1, column = 1)
-bt_3 = Button(text = "3", width = 10, height = 3, command = lambda: click(3))
-bt_3.grid(row = 1, column = 2)
+# lambda function: javascript anonymous function
+# function as warped into oneself
+bt_7 = Button(text = "7", width = 10, height = 3, command = lambda: click(7))
+bt_7.grid(row = 1, column = 0)
+bt_8 = Button(text = "8", width = 10, height = 3, command = lambda: click(8))
+bt_8.grid(row = 1, column = 1)
+bt_9 = Button(text = "9", width = 10, height = 3, command = lambda: click(9))
+bt_9.grid(row = 1, column = 2)
+bt_del = Button(text = "Delete", width = 10, height = 3, command = lambda: e.delete(0))
+bt_del.grid(row = 1, column = 3)
 
 # H2
 bt_4 = Button(text = "4", width = 10, height = 3, command = lambda: click(4))
@@ -36,20 +39,24 @@ bt_div = Button(text = ":", width = 10, height = 3, command = click(1))
 bt_div.grid(row = 2, column = 4)
 
 # H3
-bt_7 = Button(text = "7", width = 10, height = 3, command = lambda: click(7))
-bt_7.grid(row = 3, column = 0)
-bt_8 = Button(text = "8", width = 10, height = 3, command = lambda: click(8))
-bt_8.grid(row = 3, column = 1)
-bt_9 = Button(text = "9", width = 10, height = 3, command = lambda: click(9))
-bt_9.grid(row = 3, column = 2)
+bt_1 = Button(text = "1", width = 10, height = 3, command = lambda: click(1))
+bt_1.grid(row = 3, column = 0)
+bt_2 = Button(text = "2", width = 10, height = 3, command = lambda: click(2))
+bt_2.grid(row = 3, column = 1)
+bt_3 = Button(text = "3", width = 10, height = 3, command = lambda: click(3))
+bt_3.grid(row = 3, column = 2)
 bt_pl = Button(text = "+", width = 10, height = 3)
 bt_pl.grid(row = 3, column = 3)
 bt_min = Button(text = "-", width = 10, height = 3)
 bt_min.grid(row = 3, column = 4)
 
 # H0
+bt_dot = Button(text = ".", width = 10, height = 3, command = lambda: click(0))
+bt_dot.grid(row = 4, column = 0)
 bt_0 = Button(text = "0", width = 10, height = 3, command = lambda: click(0))
 bt_0.grid(row = 4, column = 1)
+bt_cal = Button(text = "=", width = 10, height = 3, command = lambda: click(0))
+bt_cal.grid(row = 4, column = 2)
 
 #Luôn để xuống cuối dòng
 window.mainloop()
