@@ -10,9 +10,21 @@ window.title("May tinh bo tui")
 e = Entry(width =20, borderwidth=10, font = "Arial 18") # hộp nhập văn bản
 e.grid(row = 0, column = 0, columnspan = 5, pady = 10)
 
+def bt_add(num):
+    global num1 #global var
+    num1 = int(e.get())
+    e.delete(0, END)
+    global operator
+    operator = 1
+
 
 def click(num):
-    e.insert(0, str(num))
+    e.insert(END, str(num))
+
+def in_ra_ket_qua():
+    global num1, operator
+    num2 = int(e.get())
+    
 
 # các nút bấm
 # lambda function: javascript anonymous function
@@ -23,8 +35,10 @@ bt_8 = Button(text = "8", width = 10, height = 3, command = lambda: click(8))
 bt_8.grid(row = 1, column = 1)
 bt_9 = Button(text = "9", width = 10, height = 3, command = lambda: click(9))
 bt_9.grid(row = 1, column = 2)
-bt_del = Button(text = "Delete", width = 10, height = 3, command = lambda: e.delete(0))
+bt_del = Button(text = "Delete", width = 10, height = 3, command = lambda: e.delete(END))
 bt_del.grid(row = 1, column = 3)
+bt_AC = Button(text = "AC", width = 10, height = 3, command = lambda: e.delete(0, END))
+bt_AC.grid(row = 1, column = 3)
 
 # H2
 bt_4 = Button(text = "4", width = 10, height = 3, command = lambda: click(4))
