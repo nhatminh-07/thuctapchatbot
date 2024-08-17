@@ -10,21 +10,48 @@ window.title("May tinh bo tui")
 e = Entry(width =20, borderwidth=10, font = "Arial 18") # hộp nhập văn bản
 e.grid(row = 0, column = 0, columnspan = 5, pady = 10)
 
-def bt_add(num):
+def bt_add():
     global num1 #global var
-    num1 = int(e.get())
+    num1 = float(e.get())
     e.delete(0, END)
     global operator
     operator = 1
+
+def bt_minus():
+    global num1 #global var
+    num1 = float(e.get())
+    e.delete(0, END)
+    global operator
+    operator = 2
+
+def bt_mult():
+    global num1 #global var
+    num1 = float(e.get())
+    e.delete(0, END)
+    global operator
+    operator = 3
+
+def bt_divi():
+    global num1 #global var
+    num1 = float(e.get())
+    e.delete(0, END)
+    global operator
+    operator = 4
 
 
 def click(num):
     e.insert(END, str(num))
 
 def in_ra_ket_qua():
-    global num1, operator
-    num2 = int(e.get())
-    
+    global num1
+    global operator
+    num2 = float(e.get())
+    e.delete(0, END)
+    if operator == 1: e.insert(0, num1+num2)
+    elif operator == 2: e.insert(0, num1-num2)
+    elif operator == 3: e.insert(0, num1*num2)
+    elif operator == 4: e.insert(0, num1/num2)
+
 
 # các nút bấm
 # lambda function: javascript anonymous function
@@ -47,9 +74,9 @@ bt_5 = Button(text = "5", width = 10, height = 3, command = lambda: click(5))
 bt_5.grid(row = 2, column = 1)
 bt_6 = Button(text = "6", width = 10, height = 3, command = lambda: click(6))
 bt_6.grid(row = 2, column = 2)
-bt_mul = Button(text = "x", width = 10, height = 3, command = click(1))
+bt_mul = Button(text = "x", width = 10, height = 3, command = lambda: bt_mult())
 bt_mul.grid(row = 2, column = 3)
-bt_div = Button(text = ":", width = 10, height = 3, command = click(1))
+bt_div = Button(text = ":", width = 10, height = 3, command = lambda: bt_divi())
 bt_div.grid(row = 2, column = 4)
 
 # H3
@@ -59,17 +86,17 @@ bt_2 = Button(text = "2", width = 10, height = 3, command = lambda: click(2))
 bt_2.grid(row = 3, column = 1)
 bt_3 = Button(text = "3", width = 10, height = 3, command = lambda: click(3))
 bt_3.grid(row = 3, column = 2)
-bt_pl = Button(text = "+", width = 10, height = 3)
+bt_pl = Button(text = "+", width = 10, height = 3, command = lambda: bt_add())
 bt_pl.grid(row = 3, column = 3)
-bt_min = Button(text = "-", width = 10, height = 3)
+bt_min = Button(text = "-", width = 10, height = 3, command = lambda: bt_minus())
 bt_min.grid(row = 3, column = 4)
 
 # H0
-bt_dot = Button(text = ".", width = 10, height = 3, command = lambda: click(0))
+bt_dot = Button(text = ".", width = 10, height = 3, command = lambda: e.insert(END, "."))
 bt_dot.grid(row = 4, column = 0)
 bt_0 = Button(text = "0", width = 10, height = 3, command = lambda: click(0))
 bt_0.grid(row = 4, column = 1)
-bt_cal = Button(text = "=", width = 10, height = 3, command = lambda: click(0))
+bt_cal = Button(text = "=", width = 10, height = 3, command = lambda: in_ra_ket_qua())
 bt_cal.grid(row = 4, column = 2)
 
 #Luôn để xuống cuối dòng
