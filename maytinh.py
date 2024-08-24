@@ -65,7 +65,7 @@ bt_9.grid(row = 1, column = 2)
 bt_del = Button(text = "Delete", width = 10, height = 3, command = lambda: e.delete(END))
 bt_del.grid(row = 1, column = 3)
 bt_AC = Button(text = "AC", width = 10, height = 3, command = lambda: e.delete(0, END))
-bt_AC.grid(row = 1, column = 3)
+bt_AC.grid(row = 1, column = 4)
 
 # H2
 bt_4 = Button(text = "4", width = 10, height = 3, command = lambda: click(4))
