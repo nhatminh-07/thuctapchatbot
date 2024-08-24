@@ -36,3 +36,6 @@ bt_clear.grid(row=0, column=1, sticky="N", padx=5, pady=5)
 bt_send.grid(row=1, column=1, padx=5, pady=5)
 
 window.mainloop()
+
+# giọng nói
+# google console cloud hd (7/9/2024)
