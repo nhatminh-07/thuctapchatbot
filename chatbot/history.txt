@@ -1,0 +1,4 @@
+You: Hello!
+Computer: 
+You: hello
+Computer: hi, nice to meet you

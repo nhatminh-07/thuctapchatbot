@@ -17,6 +17,9 @@ def send_text():
 def computer_responsei(user_text):
     computer_text = computer_response.response(user_text)
     text_area.insert(tk.END, "Computer: " + computer_text)
+    f = open("history.txt", "w")
+    f.write(text_area.get("1.0", tk.END))
+    f.close()
 
 # Ô đối thoạik
 text_area = tk.Text(width =40, height = 20)
@@ -38,7 +41,7 @@ bt_send.grid(row=1, column=1, padx=5, pady=5)
 try:
     f = open("history.txt", "r")
 except:
-    f = open("history.txt", 'x')
+    f = open("history.txt", 'w')
 else:
     content = f.read()
     text_area.insert("1.0", content)
