@@ -35,6 +35,16 @@ text_box.grid(row=1, column=0, padx=(15,5), pady=5)
 bt_clear.grid(row=0, column=1, sticky="N", padx=5, pady=5)
 bt_send.grid(row=1, column=1, padx=5, pady=5)
 
+try:
+    f = open("history.txt", "r")
+except:
+    f = open("history.txt", 'x')
+else:
+    content = f.read()
+    text_area.insert("1.0", content)
+finally:
+    f.close()
+
 window.mainloop()
 
 # giọng nói
